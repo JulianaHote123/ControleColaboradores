@@ -49,5 +49,6 @@ namespace JulianaHote20171222.Models
         public DateTime DataCadastro { get; set; }
 
         #endregion
+
     }
 }
