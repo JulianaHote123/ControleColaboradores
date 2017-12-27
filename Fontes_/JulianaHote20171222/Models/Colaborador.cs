@@ -8,6 +8,7 @@ using JulianaHote20171222.Models;
 
 namespace JulianaHote20171222.Models
 {
+
     public class Colaborador
     {
         #region Propriedades
