@@ -1,0 +1,74 @@
+﻿@model JulianaHote20171222.Models.Colaborador
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Excluir</h2>
+
+<div>
+    <h4>Colaborador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.ControleEMP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NomeEMP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa.ControlePES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.NomePES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargoColaborador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargoColaborador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDemissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDemissao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.ControleCOL }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

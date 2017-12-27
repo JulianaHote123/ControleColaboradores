@@ -1,0 +1,51 @@
+﻿@model IEnumerable<JulianaHote20171222.Models.Empresa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Empresas</h2>
+
+<p>
+    @Html.ActionLink("Incluir", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeEMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RazaoSocialEMP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeEMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RazaoSocialEMP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.ControleEMP }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.ControleEMP }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ControleEMP })
+        </td>
+    </tr>
+}
+
+</table>

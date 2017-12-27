@@ -1,0 +1,58 @@
+﻿@model JulianaHote20171222.Models.Pessoa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Excluir</h2>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.ControleEMP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NomeEMP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePES)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataNascimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.ControlePES }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

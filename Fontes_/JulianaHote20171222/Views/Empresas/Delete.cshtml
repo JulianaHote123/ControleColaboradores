@@ -1,0 +1,56 @@
+﻿@model JulianaHote20171222.Models.Empresa
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja mesmo excluir o registro selecionado ?</h3>
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEMP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeEMP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocialEMP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RazaoSocialEMP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

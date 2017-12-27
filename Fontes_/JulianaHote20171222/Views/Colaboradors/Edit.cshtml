@@ -1,0 +1,98 @@
+﻿@model JulianaHote20171222.Models.Colaborador
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Alterar</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Colaborador</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.ControleCOL)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ControleEMP, "Empresa", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ControleEMP", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ControleEMP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ControlePES, "Pessoa", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("ControlePES", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ControlePES, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "form-control", @placeholder = "somente números" } })
+            @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CargoColaborador, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CargoColaborador, new { htmlAttributes = new { @class = "form-control"} })
+            @Html.ValidationMessageFor(model => model.CargoColaborador, "", new { @class = "text-danger"})
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DataDemissao, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DataDemissao, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DataDemissao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.DataCadastro, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.DataCadastro, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.DataCadastro, "", new { @class = "text-danger"})
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function ()
+        {            
+            $("#DataDemissao").inputmask("mask", { "mask": "99/99/9999" }, { reverse: true });
+            $('#Salario').maskMoney();
+            $("#DataCadastro").inputmask("mask", { "mask": "99/99/9999" }, { reverse: true });
+        });
+    </script>
+}
